@@ -1,0 +1,512 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Modern UI Variables */
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --primary-light: #3b82f6;
+  --secondary: #64748b;
+  --secondary-dark: #475569;
+  --secondary-light: #94a3b8;
+  --accent: #0ea5e9;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --light: #f8fafc;
+  --dark: #0f172a;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  --shadow-outline: 0 0 0 3px rgba(66, 153, 225, 0.5);
+  --radius-sm: 0.125rem;
+  --radius: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-full: 9999px;
+}
+
+/* Modern Card Styles */
+.modern-card {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  border: 1px solid var(--gray-100);
+  overflow: hidden;
+}
+
+.modern-card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px);
+}
+
+/* Modern Button Styles */
+.btn-modern-primary {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-modern-primary:hover {
+  background-color: var(--primary-dark);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.btn-modern-secondary {
+  background-color: white;
+  color: var(--primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: 2px solid var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-modern-secondary:hover {
+  background-color: var(--primary-light);
+  color: white;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Modern Section Styles */
+.section-modern {
+  padding: 5rem 0;
+  position: relative;
+}
+
+.section-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, rgba(243, 244, 246, 0.5) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(243, 244, 246, 0.5) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.section-modern > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Modern Typography */
+.heading-modern {
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.subheading-modern {
+  color: var(--secondary);
+  font-weight: 500;
+  margin-bottom: 2rem;
+  max-width: 36rem;
+  line-height: 1.6;
+}
+
+/* Custom animations for the hero slider */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+/* Smooth transitions for the slider */
+.slider-transition {
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom progress bar animation */
+@keyframes progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.progress-bar {
+  animation: progress 4s linear;
+}
+
+/* Hover effects for navigation buttons */
+.slider-nav-button {
+  transition: all 0.3s ease;
+}
+
+.slider-nav-button:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Slide indicator animations */
+.slide-indicator {
+  transition: all 0.3s ease;
+}
+
+.slide-indicator.active {
+  transform: scale(1.25);
+}
+
+/* Custom button hover effects */
+.btn-hover-lift {
+  transition: all 0.3s ease;
+}
+
+.btn-hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading animation for images */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.image-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Responsive text utilities */
+.text-responsive {
+  font-size: clamp(1rem, 4vw, 2rem);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-dark);
+}
+
+/* Modern Form Elements */
+.input-modern {
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  transition: all 0.2s ease;
+  width: 100%;
+  background-color: white;
+  color: var(--gray-800);
+}
+
+.input-modern:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.input-modern::placeholder {
+  color: var(--gray-400);
+}
+
+.label-modern {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--gray-700);
+}
+
+/* Modern Table Styles */
+.table-modern {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table-modern th {
+  background-color: var(--gray-50);
+  color: var(--gray-700);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.table-modern td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--gray-200);
+  color: var(--gray-600);
+}
+
+.table-modern tr:hover td {
+  background-color: var(--gray-50);
+}
+
+/* Modern Badge Styles */
+.badge-modern {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-modern-primary {
+  background-color: rgba(37, 99, 235, 0.1);
+  color: var(--primary);
+}
+
+.badge-modern-success {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+}
+
+.badge-modern-warning {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: var(--warning);
+}
+
+.badge-modern-danger {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--danger);
+}
+
+/* Modern List Styles */
+.list-modern {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-modern li {
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.list-modern li::before {
+  content: '•';
+  color: var(--primary);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-right: 0.5em;
+}
+
+/* Modern Divider */
+.divider-modern {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(to right, transparent, var(--gray-300), transparent);
+  margin: 2rem 0;
+}
+
+/* Mobile-first responsive utilities */
+@media (max-width: 640px) {
+  .mobile-text-center {
+    text-align: center;
+  }
+
+  .mobile-full-width {
+    width: 100%;
+  }
+}
+
+/* Mobile Performance Optimizations */
+@media (max-width: 768px) {
+  /* Reduce animation complexity on mobile */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  /* Optimize touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Optimize images for mobile */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* Optimize text readability */
+  p {
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  /* Mobile navigation optimizations */
+  .mobile-nav-item {
+    padding: 12px 16px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .tablet-optimized {
+    font-size: 18px;
+  }
+}
+
+/* Performance optimizations for all devices */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Optimize font loading */
+body {
+  font-display: swap;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optimize transitions */
+.transition-optimized {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Reduce layout shifts */
+img, video, iframe {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Optimize for touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .touch-optimized {
+    padding: 12px;
+    min-height: 44px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .high-contrast {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Container queries for modern responsive design */
+@container (max-width: 400px) {
+  .container-responsive {
+    padding: 1rem;
+  }
+}

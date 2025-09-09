@@ -5,6 +5,7 @@ import About from './About';
 import Contact from './Contact';
 import AreasWeServe from './AreasWeServe';
 import LoadingOptimizer, { measurePerformance, optimizeForMobile } from './LoadingOptimizer';
+import SEOHead from './SEOHead';
 
 const HomePage = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -47,6 +48,7 @@ const HomePage = () => {
 
   return (
     <>
+      <SEOHead />
       <Hero />
       <Services />
       <About />

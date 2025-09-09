@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
+import SEOHead from './SEOHead';
 
 const AreasServedPage = () => {
   const cities = [
@@ -61,6 +62,12 @@ const AreasServedPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEOHead
+        title="Areas Served - DR General Cleaning | Allentown PA & Lehigh Valley"
+        description="DR General Cleaning serves 25+ cities across Allentown, Bethlehem, Easton and throughout the Lehigh Valley. Professional cleaning services in Northampton, Lehigh, Montgomery, and Berks counties."
+        keywords="areas served Allentown PA, cleaning services Lehigh Valley, service area Bethlehem, Easton cleaning company, Northampton County, Montgomery County, Berks County"
+        ogUrl="https://drgeneralcleaning.com/areas-served"
+      />
       {/* Header */}
       <Header />
 

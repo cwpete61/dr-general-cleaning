@@ -1,10 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
+import SEOHead from './SEOHead';
 
 const AboutPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEOHead
+        title="About DR General Cleaning | Professional House Cleaning Allentown PA"
+        description="Learn about DR General Cleaning's 10+ years of professional house cleaning services in Allentown, PA and Lehigh Valley. Family-owned, reliable, and eco-friendly cleaning solutions."
+        ogUrl="https://drgeneralcleaning.com/about"
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

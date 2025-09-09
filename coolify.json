@@ -1,0 +1,15 @@
+{
+  "name": "dr-general-cleaning",
+  "type": "static",
+  "build": {
+    "command": "npm ci && npm run build",
+    "output": "dist",
+    "environment": {
+      "NODE_ENV": "production"
+    }
+  },
+  "static": {
+    "spa": true,
+    "fallback": "index.html"
+  }
+}

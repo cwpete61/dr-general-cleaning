@@ -10,5 +10,18 @@ export default defineConfig({
     strictPort: true,
     hmr: false,
     allowedHosts: ['.e2b.app', 'localhost', '127.0.0.1']
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: 'index.html'
+      }
+    },
+    // Disable HTML inline proxy to avoid CSS processing issues
+    minify: 'esbuild',
+    cssCodeSplit: false
+  },
+  optimizeDeps: {
+    exclude: ['public/about.html', 'public/areas-served.html']
   }
 })

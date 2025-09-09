@@ -53,7 +53,7 @@ const Header = () => {
             <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-sm lg:text-base">Home</a>
             <a href="#services" className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-sm lg:text-base">Services</a>
             <a href="/areas-served.html" className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-sm lg:text-base">Areas Served</a>
-            <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-sm lg:text-base">About</a>
+            <a href="/about.html" className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-sm lg:text-base">About</a>
             <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-sm lg:text-base">Contact</a>
           </nav>
 
@@ -87,28 +87,21 @@ const Header = () => {
           isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         } overflow-hidden`}>
           <nav className="flex flex-col space-y-1 py-4">
-            {['home', 'services', 'areas-served', 'about', 'contact'].map((section) => (
-              <a
-                key={section}
-                href={`#${section}`}
-                onClick={handleLinkClick}
-                className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 py-3 px-4 rounded-lg text-left font-medium"
-              >
-                {section === 'areas-served' ? (
-                  <a href="/areas-served.html" className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 py-3 px-4 rounded-lg text-left font-medium">
-                    Areas Served
-                  </a>
-                ) : (
-                  <a
-                    href={`#${section}`}
-                    onClick={handleLinkClick}
-                    className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 py-3 px-4 rounded-lg text-left font-medium"
-                  >
-                    {section.charAt(0).toUpperCase() + section.slice(1)}
-                  </a>
-                )}
-              </a>
-            ))}
+            <a href="#home" onClick={handleLinkClick} className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 py-3 px-4 rounded-lg text-left font-medium">
+              Home
+            </a>
+            <a href="#services" onClick={handleLinkClick} className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 py-3 px-4 rounded-lg text-left font-medium">
+              Services
+            </a>
+            <a href="/areas-served.html" onClick={handleLinkClick} className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 py-3 px-4 rounded-lg text-left font-medium">
+              Areas Served
+            </a>
+            <a href="/about.html" onClick={handleLinkClick} className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 py-3 px-4 rounded-lg text-left font-medium">
+              About
+            </a>
+            <a href="#contact" onClick={handleLinkClick} className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 py-3 px-4 rounded-lg text-left font-medium">
+              Contact
+            </a>
           </nav>
         </div>
       </div>

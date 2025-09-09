@@ -13,7 +13,7 @@ export default defineConfig({
   },
   build: {
     // Fix for Coolify deployment - ensure proper base path
-    base: './',
+    base: '',
     rollupOptions: {
       input: {
         main: 'index.html'
@@ -23,7 +23,9 @@ export default defineConfig({
     minify: 'esbuild',
     cssCodeSplit: false,
     // Ensure assets are properly referenced
-    assetsInlineLimit: 0
+    assetsInlineLimit: 0,
+    // Copy public directory to ensure all assets are included
+    copyPublicDir: true
   },
   optimizeDeps: {
     exclude: ['public/about.html', 'public/areas-served.html']

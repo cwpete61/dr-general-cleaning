@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -50,11 +51,11 @@ const Header = () => {
 
           {/* Desktop Navigation - Optimized for performance */}
           <nav className="hidden md:flex space-x-4 lg:space-x-8">
-            <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-sm lg:text-base">Home</a>
-            <a href="#services" className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-sm lg:text-base">Services</a>
-            <a href="/areas-served.html" className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-sm lg:text-base">Areas Served</a>
-            <a href="/about.html" className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-sm lg:text-base">About</a>
-            <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-sm lg:text-base">Contact</a>
+            <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-sm lg:text-base">Home</Link>
+            <a href="/#services" className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-sm lg:text-base">Services</a>
+            <Link to="/areas-served" className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-sm lg:text-base">Areas Served</Link>
+            <Link to="/about" className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-sm lg:text-base">About</Link>
+            <a href="/#contact" className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-sm lg:text-base">Contact</a>
           </nav>
 
           {/* Mobile Menu Button - Optimized for touch */}
@@ -87,19 +88,19 @@ const Header = () => {
           isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         } overflow-hidden`}>
           <nav className="flex flex-col space-y-1 py-4">
-            <a href="#home" onClick={handleLinkClick} className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 py-3 px-4 rounded-lg text-left font-medium">
+            <Link to="/" onClick={handleLinkClick} className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 py-3 px-4 rounded-lg text-left font-medium">
               Home
-            </a>
-            <a href="#services" onClick={handleLinkClick} className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 py-3 px-4 rounded-lg text-left font-medium">
+            </Link>
+            <a href="/#services" onClick={handleLinkClick} className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 py-3 px-4 rounded-lg text-left font-medium">
               Services
             </a>
-            <a href="/areas-served.html" onClick={handleLinkClick} className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 py-3 px-4 rounded-lg text-left font-medium">
+            <Link to="/areas-served" onClick={handleLinkClick} className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 py-3 px-4 rounded-lg text-left font-medium">
               Areas Served
-            </a>
-            <a href="/about.html" onClick={handleLinkClick} className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 py-3 px-4 rounded-lg text-left font-medium">
+            </Link>
+            <Link to="/about" onClick={handleLinkClick} className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 py-3 px-4 rounded-lg text-left font-medium">
               About
-            </a>
-            <a href="#contact" onClick={handleLinkClick} className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 py-3 px-4 rounded-lg text-left font-medium">
+            </Link>
+            <a href="/#contact" onClick={handleLinkClick} className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 py-3 px-4 rounded-lg text-left font-medium">
               Contact
             </a>
           </nav>

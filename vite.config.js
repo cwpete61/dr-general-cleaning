@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// E2B-compatible Vite configuration
+// E2B-compatible Vite configuration with Coolify deployment fixes
 export default defineConfig({
   plugins: [react()],
   server: {
@@ -12,6 +12,8 @@ export default defineConfig({
     allowedHosts: ['.e2b.app', 'localhost', '127.0.0.1']
   },
   build: {
+    // Fix for Coolify deployment - ensure proper base path
+    base: './',
     rollupOptions: {
       input: {
         main: 'index.html'
@@ -19,7 +21,9 @@ export default defineConfig({
     },
     // Disable HTML inline proxy to avoid CSS processing issues
     minify: 'esbuild',
-    cssCodeSplit: false
+    cssCodeSplit: false,
+    // Ensure assets are properly referenced
+    assetsInlineLimit: 0
   },
   optimizeDeps: {
     exclude: ['public/about.html', 'public/areas-served.html']

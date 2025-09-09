@@ -1,0 +1,14 @@
+version: "1.0"
+applications:
+  - name: dr-general-cleaning
+    type: static
+    build:
+      commands:
+        - npm ci
+        - npm run build
+      publishDirectory: dist
+      environment:
+        NODE_ENV: production
+    static:
+      spa: true          # Enables history fallback for React Router
+      indexFile: index.html
